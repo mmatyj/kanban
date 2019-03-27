@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d5e2e5;
+
+    .board {
+        .header-content {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 25px;
+            background-color: #a0d8e5;
+
+            button {
+                width: 250px;
+                height: 60px;
+                background-color: #b9c6c9;
+                border: none;
+                border-radius: 20px;
+                font-size: 20px;
+                font-family: 'Gloria Hallelujah', cursive;
+                cursor: pointer;
+            }
+        }
+
+        .column-container {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+
+            .column {
+                min-width: 25vw;
+                margin: 5px;
+                border: 1px solid black;
+                position: relative;
+                background-color: white;
+                border-radius: 5px;
+
+                li {
+                    list-style: none;
+                }
+
+                .column-title {
+                    font-family: 'Gloria Hallelujah', cursive;
+                    text-align: center;
+                    font-size: 35px;
+                }
+
+                .btn-delete {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-family: 'Permanent Marker', cursive;
+                    border: none;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .add-card {
+                    width: 100%;
+                    font-family: 'Gloria Hallelujah', cursive;
+                    font-size: 22px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .card {
+                    min-height: 50px;
+                    background-color: #ffffbc;
+                    margin: 0 10px 10px;
+                    font-family: 'Permanent Marker', cursive;
+                    position: relative;
+
+                    .card-description {
+                        padding: 10px;
+                        font-family: 'Indie Flower', cursive;
+                    }
+
+                    .btn-delete-card {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        font-family: 'Permanent Marker', cursive;
+                        border: none;
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+    }
+}

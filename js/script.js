@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         removeColumn: function () {
             this.element.parentNode.removeChild(this.element);
+
         }
     };
     //class card

@@ -8,8 +8,11 @@ body {
 }
 
 body .board .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Permanent Marker', cursive;
@@ -29,15 +32,20 @@ body .board .header-content button {
 }
 
 body .board .column-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 50px;
 }
 
 body .board .column-container .column {
   min-width: 25vw;
   margin: 5px;
-  box-shadow: 10px 5px 10px -6px #777;
+  -webkit-box-shadow: 10px 5px 10px -6px #777;
+          box-shadow: 10px 5px 10px -6px #777;
   position: relative;
   background-color: white;
   border-radius: 5px;
@@ -103,5 +111,4 @@ body .board .column-container .column .card .btn-delete-card {
   border-radius: 50%;
   cursor: pointer;
 }
-
 /*# sourceMappingURL=style.css.map */

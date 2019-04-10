@@ -14,9 +14,9 @@ function Card(id, name) {
         if (event.target.classList.contains('btn-delete-card')) {
             self.removeCard();
         }
-        // if (event.target.classList.contains('edit-card')) {
-        //     self.editCard();
-        // }
+        if (event.target.classList.contains('edit-card')) {
+            self.editCard();
+        }
     });
 }
 Card.prototype = {
@@ -34,19 +34,26 @@ Card.prototype = {
                 self.element.parentNode.removeChild(self.element);
             })
     },
-    // editCard: function () {
-    //     var newCardName = prompt("Enter a new name of the card");
-    //     event.preventDefault();
-    //     var self = this;
-    //     fetch(prefix + baseUrl + '/card/' + self.id, {
-    //             method: 'PUT',
-    //             headers: myHeaders,
-    //         })
-    //         .then(function (resp) {
-    //             return resp.json();
-    //         })
-    //         .then(function (resp) {
-    //             this.name = newCardName;
-    //         });
-    // }
+    editCard: function () {
+        var newCardName = prompt("Enter a new name of the card");
+        var data = new FormData();
+
+        data.append('name', newCardName);
+
+        event.preventDefault();
+        var self = this;
+
+        fetch(prefix + baseUrl + '/card/' + self.id, {
+                method: 'PUT',
+                headers: myHeaders,
+                body: data,
+
+            })
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (resp) {
+                self.name = newCardName;
+            });
+    }
 }

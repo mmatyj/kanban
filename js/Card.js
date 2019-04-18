@@ -35,19 +35,21 @@ Card.prototype = {
             })
     },
     editCard: function () {
-        var newCardName = prompt("Enter a new name of the card");
-        var data = new FormData();
-
-        data.append('name', newCardName);
-
-        event.preventDefault();
         var self = this;
+        var newCardName = prompt("Enter a new name of the card");
+        event.preventDefault();
+
+        var data = new FormData();
+        data.append('column.id', self.id)
+        data.append('cards.name', newCardName);
+        data.append('cards.bootcamp_kanban_column_id', self.id);
+
+
 
         fetch(prefix + baseUrl + '/card/' + self.id, {
                 method: 'PUT',
                 headers: myHeaders,
-                body: data,
-
+                body: data
             })
             .then(function (resp) {
                 return resp.json();
